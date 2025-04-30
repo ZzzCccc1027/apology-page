@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -6,20 +7,39 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <audio id="bg-music" src="bgm.mp3" autoplay loop muted></audio>
+    <button id="music-toggle" onclick="toggleMusic()">🔇</button>
+
     <div class="container">
-        <h1>亲爱的史润双宝宝，对不起</h1>
+        <h1>亲爱的宝贝，对不起</h1>
         <img src="images/your_photo.jpg" alt="我们的照片" class="photo">
-        <p class="letter">
-            宝贝，对不起，我真的不是故意惹你生气的。<br>
-            我这个人有时候说话直接了当。
-            每一分每一秒，我都在想你，后悔自己的任性。<br>
-            你对我来说真的非常非常重要，我愿意用尽所有去哄你开心。<br>
-            如果你愿意原谅我，我一定会加倍珍惜你，做一个更好的男朋友。<br>
-            请原谅我，好吗？💗
-        </p>
-        <button onclick="showMessage()">点我原谅小祝赫</button>
+        <p class="letter" id="typed-text"></p>
+        <button onclick="showMessage()">点我原谅他</button>
         <p id="forgive-message" class="hidden">耶！她原谅你啦～快去抱抱她！💖💖💖</p>
+        <div id="promise-card" class="hidden">
+            <h2>💕 我的承诺 💕</h2>
+            <p>我承诺：</p>
+            <ul>
+                <li>以后不再惹你生气</li>
+                <li>每天都爱你、宠你、哄你</li>
+                <li>让你永远开心幸福！💍</li>
+            </ul>
+        </div>
     </div>
+
     <script src="script.js"></script>
+
+    <script>
+        // 花瓣飘落动画
+        setInterval(() => {
+            const petal = document.createElement("div");
+            petal.className = "falling-petal";
+            petal.style.left = Math.random() * 100 + "vw";
+            document.body.appendChild(petal);
+            setTimeout(() => {
+                petal.remove();
+            }, 5000);
+        }, 300);
+    </script>
 </body>
 </html>
