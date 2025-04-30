@@ -8,7 +8,8 @@
 </head>
 <body>
     <audio id="bg-music" src="bgm.mp3" autoplay loop muted></audio>
-    <button id="music-toggle" onclick="toggleMusic()">🔇</button>
+    <button id="music-toggle" onclick="toggleMusic()">🎵</button>
+    <p style="font-size: 0.9em; color: #999; text-align: center;">（提示：有音乐哦，点一下页面或按钮听）</p>
 
     <div class="container">
         <h1>亲爱的宝贝，对不起</h1>
@@ -40,6 +41,15 @@
                 petal.remove();
             }, 5000);
         }, 300);
+
+        // 用户首次点击页面时自动解除静音
+        window.addEventListener("click", () => {
+            const music = document.getElementById("bg-music");
+            if (music.muted) {
+                music.muted = false;
+                document.getElementById("music-toggle").textContent = "🎵";
+            }
+        }, { once: true });
     </script>
 </body>
 </html>
