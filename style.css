@@ -1,6 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
 body {
     margin: 0;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'ZCOOL KuaiLe', cursive;
     background: linear-gradient(to right, #ffe6f0, #ffd6e8);
     color: #ff3399;
     text-align: center;
@@ -37,15 +40,17 @@ h1 {
 button {
     background-color: #ff66a3;
     color: white;
-    font-size: 1.2em;
-    padding: 12px 24px;
+    font-size: 1.3em;
+    padding: 12px 28px;
     border: none;
-    border-radius: 10px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(255, 51, 153, 0.3);
 }
 
 button:hover {
+    transform: scale(1.1);
     background-color: #ff3385;
 }
 
@@ -57,4 +62,59 @@ button:hover {
 
 .hidden {
     display: none;
+}
+
+.falling-heart {
+    position: fixed;
+    top: -20px;
+    font-size: 20px;
+    animation: fall 4s linear infinite;
+    color: #ff3399;
+    z-index: 999;
+}
+
+.falling-heart::before {
+    content: "💖";
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+#promise-card {
+    margin-top: 30px;
+    background-color: #fff0f5;
+    border: 2px dashed #ff99cc;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px rgba(255, 102, 153, 0.2);
+}
+
+#promise-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#promise-card li {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.falling-petal {
+    position: fixed;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+    background-image: url('https://cdn.jsdelivr.net/gh/transparent-png/sakura/sakura.png');
+    background-size: cover;
+    animation: fall 5s linear infinite;
+    z-index: 999;
+    pointer-events: none;
 }
